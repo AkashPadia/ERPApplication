@@ -5,6 +5,7 @@
 }
 
 <h2>Customers</h2>
+@Html.ActionLink("Create New", "New")
 @if (!Model.Any())
 {
     <p>We don't have any customers yet.</p>
@@ -22,7 +23,7 @@ else
         </thead>
         <tbody>
             @foreach (var customer in Model)
-            {
+                {
                 <tr>
                     <td>
                         @customer.FirstName
@@ -34,7 +35,9 @@ else
                         @customer.City
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = customer.CustomerId }, null)
+                        @Html.ActionLink("Edit", "Edit", new { id = customer.CustomerId }, null) |
+                        @Html.ActionLink("Details", "Details", new { id = customer.CustomerId }, null) |
+                        @Html.ActionLink("Delete", "Delete", new { id = customer.CustomerId }, null)
                     </td>
                 </tr>
             }

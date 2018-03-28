@@ -30,7 +30,7 @@ namespace ERPApplication.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
-            if(customer.CustomerId == 0)
+            if (customer.CustomerId == 0)
             {
                 _context.Customers.Add(customer);
             }
@@ -57,5 +57,19 @@ namespace ERPApplication.Controllers
             return View("CustomerForm", customer);
         }
 
+        public ActionResult Details(int id)
+        {
+            var customer = _context.Customers.Single(c => c.CustomerId == id);
+            if (customer == null)
+                HttpNotFound();
+
+            return View(customer);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var customer = _context.Customers.Single(c => c.CustomerId == id);
+            return View();
+        }
     }
 }

@@ -13,5 +13,7 @@ namespace ERPApplication.Models
         public string City { get; set; }
         public string Country { get; set; }
         public int Phone { get; set; }
+
+        public string FullName { get { return string.Format("{0} {1}", FirstName, Lastname); } }
     }
 }

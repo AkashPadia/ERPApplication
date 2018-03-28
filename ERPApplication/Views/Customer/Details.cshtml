@@ -1,0 +1,20 @@
+﻿@model ERPApplication.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer Details for @Model.FullName</h2>
+<div>
+    <ul>
+        <li>
+            City: @Model.City
+        </li>
+        <li>
+            Country: @Model.Country
+        </li>
+        <li>
+            Phone: @Model.Phone
+        </li>
+    </ul>
+</div>
