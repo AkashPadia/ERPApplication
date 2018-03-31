@@ -10,7 +10,7 @@ namespace ERPApplication.Models
     {
         public int CustomerId { get; set; }
 
-        [DisplayName("FirstName Name")]
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
 
         [DisplayName("Last Name")]
