@@ -13,7 +13,7 @@ namespace ERPApplication.Migrations
                     {
                         CustomerId = c.Int(nullable: false, identity: true),
                         FirstName = c.String(),
-                        Lastname = c.String(),
+                        LastName = c.String(),
                         City = c.String(),
                         Country = c.String(),
                         Phone = c.Int(nullable: false),
