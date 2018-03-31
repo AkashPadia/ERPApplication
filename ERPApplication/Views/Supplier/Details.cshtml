@@ -1,0 +1,30 @@
+﻿@model ERPApplication.Models.Supplier
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Supplier details for @Model.CompanyName</h2>
+<div>
+    <ul>
+        <li>
+            @Model.ContactName
+        </li>
+        <li>
+            @Model.ContactTitle
+        </li>
+        <li>
+            @Model.City
+        </li>
+        <li>
+            @Model.Country
+        </li>
+        <li>
+            @Model.Phone
+        </li>
+        <li>
+            @Model.Fax
+        </li>
+    </ul>
+</div>
+

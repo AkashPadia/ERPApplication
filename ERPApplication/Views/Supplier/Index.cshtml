@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ERPApplication.Models.Supplier>
+@{
+    ViewBag.Title = "Suppliers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Suppliers</h2>
+@Html.ActionLink("Create New", "New")
+@if (!Model.Any())
+{
+    <p>We don't have any suppliers yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Company Name
+                </th>
+                <th>
+                    Contact Name
+                </th>
+                <th>
+                    Contact Title
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var supplier in Model)
+            {
+                <tr>
+                    <td>
+                        @supplier.CompanyName
+                    </td>
+                    <td>
+                        @supplier.ContactName
+                    </td>
+                    <td>
+                        @supplier.ContactTitle
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = supplier.SupplierId }, null) |
+                        @Html.ActionLink("Details", "Details", new { id = supplier.SupplierId }, null) |
+                        @Html.ActionLink("Delete", "Delete", new { id = supplier.SupplierId }, null)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
