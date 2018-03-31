@@ -15,6 +15,12 @@ namespace ERPApplication.Controllers
         {
             _context = new ERPContext();
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Customer
         public ActionResult Index()
         {
@@ -38,7 +44,7 @@ namespace ERPApplication.Controllers
             {
                 var customerInDB = _context.Customers.Single(c => c.CustomerId == customer.CustomerId);
                 customerInDB.FirstName = customer.FirstName;
-                customerInDB.Lastname = customer.Lastname;
+                customerInDB.LastName = customer.LastName;
                 customerInDB.City = customer.City;
                 customerInDB.Country = customer.Country;
                 customerInDB.Phone = customer.Phone;
@@ -50,26 +56,38 @@ namespace ERPApplication.Controllers
 
         public ActionResult Edit(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(c => c.CustomerId == id);
-            if (customer == null)
+            var customerInDB = _context.Customers.SingleOrDefault(c => c.CustomerId == id);
+            if (customerInDB == null)
                 return HttpNotFound();
 
-            return View("CustomerForm", customer);
+            return View("CustomerForm", customerInDB);
         }
 
         public ActionResult Details(int id)
         {
-            var customer = _context.Customers.Single(c => c.CustomerId == id);
-            if (customer == null)
+            var customerInDB = _context.Customers.Single(c => c.CustomerId == id);
+            if (customerInDB == null)
                 HttpNotFound();
 
-            return View(customer);
+            return View(customerInDB);
         }
 
         public ActionResult Delete(int id)
         {
-            var customer = _context.Customers.Single(c => c.CustomerId == id);
-            return View();
+            var customerInDB = _context.Customers.Find(id);
+            return View(customerInDB);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var customerInDB = _context.Customers.Single(c => c.CustomerId == id);
+            if (customerInDB == null)
+                return HttpNotFound();
+
+            _context.Customers.Remove(customerInDB);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

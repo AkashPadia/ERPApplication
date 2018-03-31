@@ -9,11 +9,11 @@ namespace ERPApplication.Models
     {
         public int CustomerId { get; set; }
         public string FirstName { get; set; }
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
         public int Phone { get; set; }
 
-        public string FullName { get { return string.Format("{0} {1}", FirstName, Lastname); } }
+        public string FullName { get { return string.Format("{0} {1}", FirstName, LastName); } }
     }
 }

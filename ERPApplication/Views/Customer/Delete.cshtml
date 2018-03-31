@@ -1,0 +1,36 @@
+﻿@model ERPApplication.Models.Customer
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Customer</h2>
+
+
+<h3>Are you sure you want to delete this?</h3>
+
+<div>
+    <ul>
+        <li>
+            First Name: @Model.FirstName
+        </li>
+        <li>
+            Last Name: @Model.LastName
+        </li>
+        <li>
+            City: @Model.City
+        </li>
+        <li>
+            Country: @Model.Country
+        </li>
+        <li>
+            Phone: @Model.Phone
+        </li>
+    </ul>
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> | @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
