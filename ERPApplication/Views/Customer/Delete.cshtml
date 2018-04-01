@@ -1,6 +1,6 @@
 ﻿@model ERPApplication.Models.Customer
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Customer";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -30,7 +30,7 @@
     @using (Html.BeginForm())
     {
         <div>
-            <input type="submit" value="Delete" class="btn btn-default" /> | @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-danger" /> | @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>

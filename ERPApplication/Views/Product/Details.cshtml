@@ -1,0 +1,23 @@
+﻿@model ERPApplication.Models.Product
+@{
+    ViewBag.Title = "Product Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Product supplied by @Model.Suppliers.CompanyName</h2>
+<div>
+    <ul>
+        <li>
+            Product Name: @Model.ProductName
+        </li>
+        <li>
+            Unit Price: @Model.UnitPrice
+        </li>
+        <li>
+            Package: @Model.Package
+        </li>
+        <li>
+            Is Discontinued: @(Model.IsDiscontinued ? "Yes" : "No")
+        </li>
+    </ul>
+</div>

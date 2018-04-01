@@ -1,0 +1,35 @@
+﻿@model ERPApplication.ViewModels.ProductViewModel
+@{
+    ViewBag.Title = "Add New Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add New Product</h2>
+@using (Html.BeginForm("Save", "Product"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Product.SupplierId)
+        @Html.DropDownListFor(m => m.Product.SupplierId, new SelectList(Model.Suppliers, "SupplierId", "CompanyName"), "Select Supplier", new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Product.ProductName)
+        @Html.TextBoxFor(m => m.Product.ProductName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Product.UnitPrice)
+        @Html.TextBoxFor(m => m.Product.UnitPrice, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Product.Package)
+        @Html.TextBoxFor(m => m.Product.Package, new { @class = "form-control" })
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.Product.IsDiscontinued) Is Discontinued?
+        </label>
+    </div>
+    @Html.HiddenFor(m => m.Product.ProductId)
+    <button type="submit" class="btn btn-primary">Save</button>
+    @Html.ActionLink("Back to list", "Index", "Product", new { @class = "btn btn-default" })
+}

@@ -1,36 +1,28 @@
-﻿@model ERPApplication.Models.Supplier
+﻿@model ERPApplication.Models.Product
 @{
-    ViewBag.Title = "Delete Supplier";
+    ViewBag.Title = "Delete Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete Supplier</h2>
-
+<h2>Delete Product</h2>
 <h3>Are you sure you want to delete this?</h3>
+
 <div>
     <ul>
         <li>
-            @Model.CompanyName
+            Product Name: @Model.ProductName
         </li>
         <li>
-            @Model.ContactName
+            Unit Price: @Model.UnitPrice
         </li>
         <li>
-            @Model.ContactTitle
+            Package: @Model.Package
         </li>
         <li>
-            @Model.City
-        </li>
-        <li>
-            @Model.Country
-        </li>
-        <li>
-            @Model.Phone
-        </li>
-        <li>
-            @Model.Fax
+            Is Discontinued: @(Model.IsDiscontinued ? "Yes" : "No")
         </li>
     </ul>
+    <h4>Product supplied by @Model.Suppliers.CompanyName</h4>
     @using (Html.BeginForm())
     {
         <div>
