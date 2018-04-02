@@ -1,0 +1,20 @@
+﻿@model ERPApplication.Models.Order
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Order details of @Model.Customers.FullName</h2>
+<div>
+    <ul>
+        <li>
+            Order Date: @Model.OrderDate.Value.ToLongDateString()
+        </li>
+        <li>
+            Order Number: @Model.OrderNumber
+        </li>
+        <li>
+            Total Amount: @Model.TotalAmount
+        </li>
+    </ul>
+</div>

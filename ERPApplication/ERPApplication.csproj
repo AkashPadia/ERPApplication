@@ -150,6 +150,10 @@
     <Compile Include="Migrations\201803311231135_Product.Designer.cs">
       <DependentUpon>201803311231135_Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804020621194_Order.cs" />
+    <Compile Include="Migrations\201804020621194_Order.Designer.cs">
+      <DependentUpon>201804020621194_Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ERPContext.cs" />
@@ -158,6 +162,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\OrderViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -208,10 +213,13 @@
     <Content Include="Views\Product\ProductForm.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\OrderForm.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -231,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803311231135_Product.resx">
       <DependentUpon>201803311231135_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804020621194_Order.resx">
+      <DependentUpon>201804020621194_Order.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
