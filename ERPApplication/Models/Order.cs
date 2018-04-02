@@ -19,7 +19,9 @@ namespace ERPApplication.Models
         [DisplayName("Total Amount")]
         public float? TotalAmount { get; set; }
 
+        [DisplayName("Customer Name")]
         public int CustomerId { get; set; }
+
         public Customer Customers { get; set; }
     }
 }

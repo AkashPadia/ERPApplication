@@ -7,23 +7,27 @@
 <h2>Add New Order</h2>
 @using (Html.BeginForm("Save", "Order"))
 {
-    <div class="form-group">
-        @Html.LabelFor(m => m.Order.CustomerId)
-        @Html.DropDownListFor(m => m.Order.CustomerId, new SelectList(Model.Customers, "CustomerId", "FullName"), "Select Customer", new { @class = "form-control" })
+    <div class="col-md-12">
+        <div class="col-md-3 form-group">
+            @Html.LabelFor(m => m.Order.CustomerId)
+            @Html.DropDownListFor(m => m.Order.CustomerId, new SelectList(Model.Customers, "CustomerId", "FullName"), "Select Customer", new { @class = "form-control" })
+        </div>
+        <div class="col-md-3 form-group">
+            @Html.LabelFor(m => m.Order.OrderDate)
+            @Html.TextBoxFor(m => m.Order.OrderDate, "{0:dd MMMM yyyy}", new { @class = "form-control" })
+        </div>
+        <div class="col-md-3 form-group">
+            @Html.LabelFor(m => m.Order.OrderNumber)
+            @Html.TextBoxFor(m => m.Order.OrderNumber, new { @class = "form-control" })
+        </div>
+        <div class="col-md-3 form-group">
+            @Html.LabelFor(m => m.Order.TotalAmount)
+            @Html.TextBoxFor(m => m.Order.TotalAmount, new { @class = "form-control" })
+        </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Order.OrderDate)
-        @Html.TextBoxFor(m => m.Order.OrderDate,"{0:dd MMMM yyyy}", new { @class = "form-control" })
+    <div class="col-md-12">
+        @Html.HiddenFor(m => m.Order.OrderId)
+        <button type="submit" class="btn btn-primary">Save</button>
+        @Html.ActionLink("Back to list", "Index", "Order", new { @class = "btn btn-default" })
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Order.OrderNumber)
-        @Html.TextBoxFor(m => m.Order.OrderNumber, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Order.TotalAmount)
-        @Html.TextBoxFor(m => m.Order.TotalAmount, new { @class = "form-control" })
-    </div>
-    @Html.HiddenFor(m => m.Order.OrderId)
-    <button type="submit" class="btn btn-primary">Save</button>
-    @Html.ActionLink("Back to list", "Index", "Order", new { @class = "btn btn-default" })
 }
