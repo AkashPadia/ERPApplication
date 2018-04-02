@@ -14,7 +14,7 @@ namespace ERPApplication.Models
         public string ProductName { get; set; }
 
         [DisplayName("Unit Price")]
-        public float UnitPrice { get; set; }
+        public float? UnitPrice { get; set; }
 
         public string Package { get; set; }
 

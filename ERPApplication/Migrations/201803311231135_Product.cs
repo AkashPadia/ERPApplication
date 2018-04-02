@@ -13,7 +13,7 @@ namespace ERPApplication.Migrations
                     {
                         ProductId = c.Int(nullable: false, identity: true),
                         ProductName = c.String(),
-                        UnitPrice = c.Single(nullable: false),
+                        UnitPrice = c.Single(),
                         Package = c.String(),
                         IsDiscontinued = c.Boolean(nullable: false),
                         SupplierId = c.Int(nullable: false),
