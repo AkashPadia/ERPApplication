@@ -154,6 +154,10 @@
     <Compile Include="Migrations\201804020621194_Order.Designer.cs">
       <DependentUpon>201804020621194_Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804130926481_OrderItem.cs" />
+    <Compile Include="Migrations\201804130926481_OrderItem.Designer.cs">
+      <DependentUpon>201804130926481_OrderItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ERPContext.cs" />
@@ -242,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804020621194_Order.resx">
       <DependentUpon>201804020621194_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804130926481_OrderItem.resx">
+      <DependentUpon>201804130926481_OrderItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
